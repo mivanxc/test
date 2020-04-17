@@ -3,7 +3,7 @@
 
 namespace core\base\settings;
 
-use core\base\setting\Settings;
+use core\base\settings\Settings;
 
 class ShopSettings
 {
@@ -20,7 +20,7 @@ class ShopSettings
         ]
     ];
 
-    private $tepmplateArr = [
+    private $templateArr = [
         'text' => ['price', 'short', 'name'],
         'textarea' => ['goods_content']
     ];
@@ -47,6 +47,15 @@ class ShopSettings
                 $this->$name = $property;
             }
         }
+    }
+
+    private function __construct()
+    {
+    }
+
+    private function __clone()
+    {
+        // TODO: Implement __clone() method.
     }
 
 }

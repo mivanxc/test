@@ -50,6 +50,7 @@ class Settings
     static public function get($property){
         return self::instance()->$property;
     }
+
     static public function instance(){
         if (self::$_instance instanceof self){
             return self::$_instance;
@@ -66,7 +67,7 @@ class Settings
 
             if (is_array($property) && is_array($item)){
 
-                $baseProperties[$name] = $this->arrayMergeRecuraive($this->$name, $property);
+                $baseProperties[$name] = $this->arrayMergeRecursive($this->$name, $property);
                 continue;
             }
 
@@ -74,7 +75,25 @@ class Settings
         }
         return $baseProperties;
     }
-    public function arrayMergeRecuraive(){
-        $arrays = func_get_arg();
+
+    public function arrayMergeRecursive(){
+        $arrays = func_get_args();
+
+        $base = array_shift($arrays);
+
+        foreach ($arrays as $array){
+            foreach ($arrays as $key => $value){
+                if (is_array($value) && is_array($base[$key])){
+                    $base[$key] = $this->arrayMergeRecuraive($base[$key], $value);
+                }else{
+                    if (is_int($key)){
+                        if (!in_array($value, $base)) array_push($base, $value);
+                        continue;
+                    }
+                    $base[$key] = $value;
+                }
+            }
+        }
+        return $base;
     }
 }

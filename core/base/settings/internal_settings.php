@@ -1,10 +1,9 @@
 <?php
 
-define('VG_ACCESS') or die('Access denied');
+defined('VG_ACCESS') or die('Access denied');
 
-const TEMPLATE ='temlates/default/';
-const ADMIN_TEMPLATES ='core/admin/view/';
-const ADMIN_TEMPLATES ='core/admin/view/';
+const TEMPLATE = 'templates/default/';
+const ADMIN_TEMPLATE = 'core/admin/view/';
 
 const COOKIE_VERSION ='1.0.0';
 const CRYPT_KEY = '';
@@ -22,5 +21,15 @@ const USER_CSS_JS = [
     'styles' => [],
     'scripts' => []
 ];
+
+function autoloadMainClasses($class_name){
+    $class_name = str_replace('\\', '/', $class_name);
+
+    if(!include_once $class_name . '.php'){
+        throw new RangeException('Не верное имя файла для подключения - ' . $class_name);
+    }
+}
+
+spl_autoload_register('autoloadMainClasses');
 
 
