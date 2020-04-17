@@ -1,8 +1,10 @@
 <?php
-$a = 1;
-$b = 2;
-$c = 9;
-echo $a + $b + $c;
-for ($i = $a; $i < $c; $i++){
-    echo $i;
-}
+
+define('VG_ACCESS', true);
+
+header('Content-Type:text/html:charset=utf-8');
+session_start();
+
+require_once 'config.php';
+require_once 'core/base/settings/internal_settings.php';
+
