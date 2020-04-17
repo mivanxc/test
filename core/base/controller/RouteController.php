@@ -32,8 +32,10 @@ class RouteController
     private function __construct()
     {
        // $adress_atr = $_SERVER['REQUEST_URI'];
+
         $a = Settings::instance();
         $a1 = ShopSettings::instance();
+
         exit();
     }
 

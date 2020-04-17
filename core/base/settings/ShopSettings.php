@@ -13,7 +13,7 @@ class ShopSettings
 
     private $routes = [
         'admin' => [
-            'name'=> 'sudo'
+            'name' => 'sudo'
         ],
         'vasya' => [
             'name' => 'vasya'
@@ -25,8 +25,8 @@ class ShopSettings
         'textarea' => ['goods_content']
     ];
 
-    static public function get ($property){
-        return self::$_instance()->$property;
+    static public function get($property){
+        return self::instance()->$property;
     }
 
     static public function instance(){
@@ -35,8 +35,8 @@ class ShopSettings
         }
         self::$_instance = new self;
         self::$_instance->baseSettings = Settings::instance();
-        $baseSettings = self::$_instance->baseSettings->clueProprerties(get_class());
-        self::$_instance->setProperty($baseSettings);
+        $baseProperties = self::$_instance->baseSettings->clueProperties(get_class());
+        self::$_instance->setProperty($baseProperties);
 
         return self::$_instance;
     }
