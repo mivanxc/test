@@ -9,7 +9,7 @@ class Settings
     static private $_instance;
     private $routes = [
         'admin' => [
-            'name' => 'admin',
+            'alias' => 'admin',
             'path' => 'core/admin/controller/',
             'hrUrl' => false
         ],
@@ -34,6 +34,11 @@ class Settings
 
     private $templateArr = [
         'text' => ['name', 'phone', 'address'],
+        'textarea' => ['content', 'keywords']
+    ];
+
+    private $t1 = [
+        'text' => ['name', 'phone'],
         'textarea' => ['content', 'keywords']
     ];
 
@@ -66,20 +71,21 @@ class Settings
             if (is_array($property) && is_array($item)){
 
                 $baseProperties[$name] = $this->arrayMergeRecursive($this->$name, $property);
-
+                continue;
             }
-
+            if (!$property) $baseProperties[$name] = $this->$name;
         }
-        exit();
+        return $baseProperties;
     }
 
     public function arrayMergeRecursive(){
+
         $arrays = func_get_args();
 
         $base = array_shift($arrays);
 
         foreach ($arrays as $array){
-            foreach ($arrays as $key => $value){
+            foreach ($array as $key => $value) {
                 if (is_array($value) && is_array($base[$key])){
                     $base[$key] = $this->arrayMergeRecursive($base[$key], $value);
                 }else{

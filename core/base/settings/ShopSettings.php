@@ -25,6 +25,11 @@ class ShopSettings
         'textarea' => ['goods_content']
     ];
 
+    private $t1 = [
+        'text' => ['name', 'phone', 'address','123'],
+        'textarea' => ['content', 'keywords','124']
+    ];
+
     static public function get($property){
         return self::instance()->$property;
     }
