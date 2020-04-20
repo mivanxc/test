@@ -11,20 +11,24 @@ class Settings
         'admin' => [
             'alias' => 'admin',
             'path' => 'core/admin/controller/',
-            'hrUrl' => false
+            'hrUrl' => false,
+            'routes' => [
+
+            ]
         ],
         'settings' => [
             'path' => 'core/base/settings/'
         ],
         'plugins' => [
-             'path' => 'core/plugins',
+             'path' => 'core/plugins/',
              'hrUrl' => false,
             'dir' => false
         ],
         'user' => [
             'path' => 'core/user/controller/',
             'hrUrl' => true,
-            'routes' => []
+            'routes' => [
+            ]
         ],
         'default' => [
             'controller' => 'IndexController',

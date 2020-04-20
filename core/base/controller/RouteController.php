@@ -6,16 +6,13 @@ namespace core\base\controller;
 use core\base\settings\Settings;
 use core\base\settings\ShopSettings;
 
-class RouteController
+class RouteController extends BaseController
 {
     static private $_instance;
 
 
     protected $routes;
-    protected $controller;
-    protected $inputMethod;
-    protected $outputMethod;
-    protected $parameters;
+
 
     private function __clone()
     {
@@ -48,16 +45,18 @@ class RouteController
          $this->routes = Settings::get('routes');
 
          if (!$this->routes) throw new RouteException('Сат находится на обслуживании');
-/*если длина строки URL ровна длине админ*/
-         if (strpos($adress_atr, $this->routes['admin']['alias']) === strlen(PATH)){
 
-             $url = explode('/', substr($adress_atr, strlen(PATH . $this->routes['admin']['alias']) + 1));
+         $url = explode('/', substr($adress_atr, strlen(PATH)));
+              /*если длина строки URL ровна длине админ*/
+         if ($url[0] && $url[0] === $this->routes['admin']['alias']){
+
+             array_shift($url);
 
              if ($url[0] && is_dir($_SERVER['DOCUMENT_ROOT'] . PATH . $this->routes['plugins']['path'] . $url[0])){
 
                 $plugin = array_shift($url);
 
-                $pluginSettings = $this->routes['settings']['psth'] . ucfirst($plugin . 'Settings');
+                $pluginSettings = $this->routes['settings']['path'] . ucfirst($plugin . 'Settings');
 
                 if (file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . $pluginSettings . '.php')){
                     $pluginSettings = str_replace('/', '\\', $pluginSettings);
@@ -82,7 +81,6 @@ class RouteController
                  $route = 'admin';
              }
          }else{
-             $url = explode('/', substr($adress_atr, strlen(PATH)));
 
              $hrUrl = $this->routes['user']['hrUrl'];
 
@@ -114,8 +112,6 @@ class RouteController
                  }
              }
          }
-
-         exit();
 
      }else{
          try {

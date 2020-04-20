@@ -13,9 +13,9 @@ class ShopSettings
 
     private $routes = [
         'plugins' => [
-            'path' => 'core/plugins',
-            'hrUrl' => false,
-            'dir' => false
+            'dir' => false,
+            'routes' => [
+            ]
         ]
     ];
 

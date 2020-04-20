@@ -4,7 +4,7 @@
 namespace core\base\exceptions;
 
 
-class RouteException
+class RouteException extends \Exception
 {
 
 }
