@@ -98,13 +98,13 @@ class RouteController extends BaseController
              if (!$hrUrl){
                  $i = 1;
              }else{
-                 $this->parameters['alies'] = $url[1];
+                 $this->parameters['alias'] = $url[1];
                  $i = 2;
              }
 
-             for (; $i < $count; $i++){
+             for ( ; $i < $count; $i++){
                  if (!$key){
-                     $key =$url[$i];
+                     $key = $url[$i];
                      $this->parameters[$key] = '';
                  }else{
                      $this->parameters[$key] = $url[$i];
@@ -138,8 +138,11 @@ class RouteController extends BaseController
         }else{
             $this->controller .= $this->routes['default']['controller'];
         }
+
         $this->inputMethod = $route[1] ? $route[1] : $this->routes['default']['inputMethod'];
         $this->outputMethod = $route[2] ? $route[2] : $this->routes['default']['outputMethod'];
+
+        return;
 
     }
 
