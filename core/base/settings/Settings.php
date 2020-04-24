@@ -7,14 +7,13 @@ namespace core\base\settings;
 class Settings
 {
     static private $_instance;
+
     private $routes = [
         'admin' => [
             'alias' => 'admin',
             'path' => 'core/admin/controller/',
             'hrUrl' => false,
-            'routes' => [
-
-            ]
+            'routes' => []
         ],
         'settings' => [
             'path' => 'core/base/settings/'
@@ -42,10 +41,6 @@ class Settings
         'textarea' => ['content', 'keywords']
     ];
 
-    private $t1 = [
-        'text' => ['name', 'phone'],
-        'textarea' => ['content', 'keywords']
-    ];
 
     private function __construct()
     {

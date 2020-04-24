@@ -28,12 +28,13 @@ class RouteController extends BaseController
 
     private function __construct()
     {
-        //вызов адрестно строки
+        /** вызов адрестно строки */
      $adress_atr = $_SERVER['REQUEST_URI'];
 
-        //разбирает строку Url и разлогает по полочкам, что контролер что
-       //поиск последнего вхождения подстроки в строку
-        //если стоит в конце и это не корневой фаил то отпровляем на адрес без /
+        /** разбирает строку Url и разлогает по полочкам, что контролер что
+       поиск последнего вхождения подстроки в строку
+       если стоит в конце и это не корневой фаил то отпровляем на адрес без  */
+
      if(strrpos($adress_atr, '/') === strlen($adress_atr) -1 && strrpos($adress_atr, '/') !== 0){
          $this->redirect(rtrim($adress_atr, '/'), 301);
      }
@@ -44,43 +45,45 @@ class RouteController extends BaseController
 
          $this->routes = Settings::get('routes');
 
-         if (!$this->routes) throw new RouteException('Сат находится на обслуживании');
+         if (!$this->routes) throw new RouteException('Сайт находится на тех-бслуживании');
 
-         $url = explode('/', substr($adress_atr, strlen(PATH)));
-              /*если длина строки URL ровна длине админ*/
-         if ($url[0] && $url[0] === $this->routes['admin']['alias']){
+         if (strpos($adress_atr, $this->routes['admin']['alias']) === strlen(PATH)) {
 
-             array_shift($url);
+             $url = explode('/', substr($adress_atr, strlen(PATH . $this->routes['admin']['alias']) + 1));
 
-             if ($url[0] && is_dir($_SERVER['DOCUMENT_ROOT'] . PATH . $this->routes['plugins']['path'] . $url[0])){
+             if ($url[0] && is_dir($_SERVER['DOCUMENT_ROOT'] . PATH . $this->routes['plugins']['path'] . $url[0])) {
 
-                $plugin = array_shift($url);
+                 $plugin = array_shift();
 
-                $pluginSettings = $this->routes['settings']['path'] . ucfirst($plugin . 'Settings');
+                 $pluginSettings = $this->routes['settings']['path'] . ucfirst($plugin . 'Settings');
 
-                if (file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . $pluginSettings . '.php')){
-                    $pluginSettings = str_replace('/', '\\', $pluginSettings);
-                    $this->routes = $pluginSettings::get('routes');
+                 if (file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . $pluginSettings . '.php')) {
+                     $pluginSettings = str_replace('/', '\\', $pluginSettings);
+                     $this->routes = $pluginSettings::get('routes');
+                 }
 
-                }
+                 $dir = $this->routes['plugins']['dir'] ? '/' . $this->routes['plugins']['dir'] . '/' : '/';
+                 $dir = str_replace('//', '/', $dir);
 
-                $dir = $this->routes['plugins']['dir'] ? '/' . $this->routes['plugins']['dir'] . '/' : '/';
-                $dir = str_replace('//', '/', $dir);
-
-                $this->controller = $this->routes['plugins']['path'] . $plugin . $dir;
+                 $this->controller = $this->routes['plugins']['path'] . $plugin . $dir;
 
                  $hrUrl = $this->routes['plugins']['hrUrl'];
 
                  $route = 'plugins';
 
-             }else{
+             } else {
+
                  $this->controller = $this->routes['admin']['path'];
 
                  $hrUrl = $this->routes['admin']['hrUrl'];
 
                  $route = 'admin';
              }
+
+
          }else{
+
+             $url = explode('/', substr($adress_atr, strlen(PATH)));
 
              $hrUrl = $this->routes['user']['hrUrl'];
 
@@ -130,8 +133,8 @@ class RouteController extends BaseController
         if (!empty($arr[0])){
             if ($this->routes[$var]['routes'][$arr[0]]){
                 $route = explode('/', $this->routes[$var]['routes'][$arr[0]]);
-
-                $this->controller .= ucfirst($route[0].'Controller');
+                                     /** ucfirst-перевод символа в верхний регистр */
+                $this->controller .= ucfirst($route[0] .'Controller');
             }else{
                 $this->controller .= ucfirst($arr[0].'Controller');
             }

@@ -48,7 +48,7 @@ abstract class BaseController
 
         $this->$inputData();
 
-        $this->page = $this->$outputData();
+          $this->page = $this->$outputData();
 
         if ($this->errors){
             $this->writeLog();
@@ -65,10 +65,10 @@ abstract class BaseController
 
             $path = TEMPLATE . explode('controller', strtolower(new \ReflectionClass($this))->getShortName())[0];
         }
-
     }
 
     protected function getPage(){
+
         exit($this->page);
     }
 

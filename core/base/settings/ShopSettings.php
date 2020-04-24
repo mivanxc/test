@@ -38,7 +38,7 @@ class ShopSettings
             return self::$_instance;
         }
         self::$_instance = new self;
-        self::$_instance->baseSettings = Settings::instance();
+        self::$_instance->baseSettings = Settings::instance();        /** имя этого класса*/
         $baseProperties = self::$_instance->baseSettings->clueProperties(get_class());
         self::$_instance->setProperty($baseProperties);
 
@@ -59,7 +59,6 @@ class ShopSettings
 
     private function __clone()
     {
-        // TODO: Implement __clone() method.
     }
 
 }
