@@ -14,19 +14,13 @@ class ShopSettings
     private $routes = [
         'plugins' => [
             'dir' => false,
-            'routes' => [
-            ]
+            'routes' => []
         ]
     ];
 
     private $templateArr = [
         'text' => ['price', 'short', 'name'],
         'textarea' => ['goods_content']
-    ];
-
-    private $t1 = [
-        'text' => ['name', 'phone', 'address','123'],
-        'textarea' => ['content', 'keywords','124']
     ];
 
     static public function get($property){
@@ -38,7 +32,7 @@ class ShopSettings
             return self::$_instance;
         }
         self::$_instance = new self;
-        self::$_instance->baseSettings = Settings::instance();        /** имя этого класса*/
+        self::$_instance->baseSettings = Settings::instance();          /** имя этого класса*/
         $baseProperties = self::$_instance->baseSettings->clueProperties(get_class());
         self::$_instance->setProperty($baseProperties);
 

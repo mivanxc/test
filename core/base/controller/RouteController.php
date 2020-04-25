@@ -3,6 +3,7 @@
 
 namespace core\base\controller;
 
+use core\base\exceptions\RouteException;
 use core\base\settings\Settings;
 use core\base\settings\ShopSettings;
 
@@ -10,9 +11,7 @@ class RouteController extends BaseController
 {
     static private $_instance;
 
-
     protected $routes;
-
 
     private function __clone()
     {
@@ -47,13 +46,15 @@ class RouteController extends BaseController
 
          if (!$this->routes) throw new RouteException('Сайт находится на тех-бслуживании');
 
-         if (strpos($adress_atr, $this->routes['admin']['alias']) === strlen(PATH)) {
+         $url = explode('/', substr($adress_atr, strlen(PATH)));
 
-             $url = explode('/', substr($adress_atr, strlen(PATH . $this->routes['admin']['alias']) + 1));
+         if ($url[0] && $url[0] === $this->routes['admin']['alias']) {
 
-             if ($url[0] && is_dir($_SERVER['DOCUMENT_ROOT'] . PATH . $this->routes['plugins']['path'] . $url[0])) {
+             array_shift($url);
 
-                 $plugin = array_shift();
+            if ($url[0] && is_dir($_SERVER['DOCUMENT_ROOT'] . PATH . $this->routes['plugins']['path'] . $url[0])) {
+
+                 $plugin = array_shift($url);
 
                  $pluginSettings = $this->routes['settings']['path'] . ucfirst($plugin . 'Settings');
 
@@ -82,8 +83,6 @@ class RouteController extends BaseController
 
 
          }else{
-
-             $url = explode('/', substr($adress_atr, strlen(PATH)));
 
              $hrUrl = $this->routes['user']['hrUrl'];
 
@@ -116,6 +115,7 @@ class RouteController extends BaseController
              }
          }
 
+
      }else{
          try {
              throw new \Exception('Не корректная дериктория сайта');
@@ -128,6 +128,7 @@ class RouteController extends BaseController
     }
 
     private function createRoute($var, $arr){
+
         $route = [];
 
         if (!empty($arr[0])){

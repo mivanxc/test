@@ -29,9 +29,10 @@ abstract class BaseController
                 'inputMethod' => $this->inputMethod,
                 'outputMethod' => $this->outputMethod
             ];
-
+                     /** invoke вызов метода ()обект класса и масив свойств */
             $object->invoke(new $controller, $args);
         }
+
         catch (\ReflectionException $e) {
             throw new RouteException($e->getMessage());
         }
