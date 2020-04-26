@@ -6,9 +6,9 @@ namespace core\user\controller;
 
 use core\base\controller\BaseController;
 
-class IndexController {
+class IndexController extends BaseController{
 
-    protected function inputDada(){
+    protected function inputData(){
 
         $template = $this->render(false, ['name' => 'Masha']);
 

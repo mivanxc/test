@@ -37,7 +37,6 @@ abstract class BaseController
             throw new RouteException($e->getMessage());
         }
 
-
     }
 
     public function request($args){
@@ -47,9 +46,9 @@ abstract class BaseController
         $inputData = $args['inputMethod'];
         $outputData = $args['outputMethod'];
 
-        $this->$inputData();
+       $this->$inputData();
 
-          $this->page = $this->$outputData();
+       $this->page = $this->$outputData();
 
         if ($this->errors){
             $this->writeLog();
@@ -64,8 +63,14 @@ abstract class BaseController
 
         if (!$path){
 
-            $path = TEMPLATE . explode('controller', strtolower(new \ReflectionClass($this))->getShortName())[0];
+            $path = TEMPLATE . explode('controller', strtolower((new \ReflectionClass($this))->getShortName()))[0];
         }
+
+        ob_start();
+
+        if (!@include_once $path . '.php') throw new RouteException('отсутствует шаблон-' .$path);
+
+        return ob_get_clean();
     }
 
     protected function getPage(){
