@@ -4,6 +4,7 @@
 namespace core\base\controller;
 
 use core\base\exceptions\RouteException;
+use core\base\settings\Settings;
 
 abstract class BaseController
 {
@@ -70,7 +71,15 @@ abstract class BaseController
 
         if (!$path){
 
-            $path = TEMPLATE . explode('controller', strtolower((new \ReflectionClass($this))->getShortName()))[0];
+            $class = new \ReflectionClass($this);
+
+            $space = str_replace('\\','/', $class->getNamespaceName() . '\\');
+            $routes = Settings::get('routes');
+
+            if ($space === $routes['user']['path']) $template = TEMPLATE;
+             else $template = ADMIN_TEMPLATE;
+
+            $path = $template . explode('controller', strtolower($class->getShortName()))[0];
         }
 
         ob_start();
