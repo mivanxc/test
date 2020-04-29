@@ -15,6 +15,4 @@ class IndexController extends BaseController{
 
         exit();
     }
-
-
 }
