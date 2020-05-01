@@ -1,0 +1,5 @@
+
+Fault: 01-05-2020 13:36:42 - Ошибка в SQL запросе: SELECT name1 FROM articles-1054 Unknown column 'name1' in 'field list'
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+

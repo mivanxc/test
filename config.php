@@ -8,4 +8,4 @@ const PATH = '/';
 const HOST = 'localhost';
 const USER = 'root';
 const PASS = '';
-const DP_NAME = 'web_magazine';
+const DB_NAME = 'web_magazin';

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace core\base\exceptions;
 
 
@@ -23,7 +22,7 @@ class RouteException extends \Exception
 
        $error .= "\r\n" . 'file' . $this->getFile() . "\r\n" . 'In line' . $this->getLine() . "\r\n";
 
-       if ($this->messages[$this->getCode()]) $this->message = $this->messages[$this->getCode()];
+       //if ($this->messages[$this->getCode()]) $this->message = $this->messages[$this->getCode()];
 
        $this->writeLog($error);
 
