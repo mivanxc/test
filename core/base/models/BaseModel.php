@@ -71,4 +71,53 @@ class BaseModel
         }
     }
 
+    /**
+     * @param $table
+     * @param array $set
+     * 'fields'=> ['id', 'name'],
+     *'where' => ['fio' => 'Smernova', 'name' => 'Masha', 'surname' => 'Sergheevna'],
+     *'operand' => ['=', '<>'],
+     *'condition' => ['AND'],
+     *'order' => ['fio', 'name'],
+     *'order_direction' => ['ASC', 'DESC'],
+     *'limit' => '1'
+     */
+
+    final public function get($table, $set = []){
+
+        $fields  = $this->createFields($table, $set);
+        $were = $this->createWere($table, $set);
+
+        $join_arr = $this->createJoin($table, $set);
+
+        $fields .= $join_arr['fields'];
+        $join = $join_arr['join'];
+        $were .= $join_arr['were'];
+
+        $fields = rtrim($fields, ',');
+
+        $order = $this->createOrder($table, $set);
+
+        $limit = $set['limit'] ? $set['limit'] : '';
+
+        $query = "SELECT $fields FROM $table $join $were $order $limit";
+
+        return $this->query($query);
+    }
+
+    protected function createFields($table = false, $set){
+
+        $set['fields'] = (is_array($set['fields']) && !empty($set['fields']))
+                         ? $set['fields'] : ['*'];
+
+        $table = $table ? $table . '.' : '';
+
+        $fields = '';
+
+        foreach ($set['fields'] as $field){
+            $fields .= $table . $field . ',';
+        }
+        return $fields;
+    }
+
 }

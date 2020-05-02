@@ -3,3 +3,47 @@ Fault: 01-05-2020 13:36:42 - Ошибка в SQL запросе: SELECT name1 FR
 fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
 In line38
 
+Fault: 02-05-2020 0:19:28 - Ошибка в SQL запросе: SELECT id,name FROM product WHERE parent_id = (SELECT id FROM category)-1242 Subquery returns more than 1 row
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 02-05-2020 0:28:53 - Ошибка в SQL запросе: SELECT product.id, product.name FROM product 
+                  LEFT JOIN category ON product.parent_id =  category.id
+                  WHERE category.id = 1)-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 3
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 02-05-2020 0:28:58 - Ошибка в SQL запросе: SELECT product.id, product.name FROM product 
+                  LEFT JOIN category ON product.parent_id =  category.id
+                  WHERE category.id = 1)-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 3
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 02-05-2020 13:36:01 - Ошибка в SQL запросе: SELECT teachers.id, teachers.name, students.id as s_id, students.name as s_name
+                  FROM teachers 
+                  LEFT JOIN stud_teach ON teachers.id = stud_teach.teachers
+                  LEFT JOIN students ON stud_teach.student = student.id-1054 Unknown column 'student.id' in 'on clause'
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 02-05-2020 13:36:06 - Ошибка в SQL запросе: SELECT teachers.id, teachers.name, students.id as s_id, students.name as s_name
+                  FROM teachers 
+                  LEFT JOIN stud_teach ON teachers.id = stud_teach.teachers
+                  LEFT JOIN students ON stud_teach.student = student.id-1054 Unknown column 'student.id' in 'on clause'
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 02-05-2020 13:40:17 - Ошибка в SQL запросе: SELECT teachers.id, teachers.name, students.id as s_id, students.name as s_name
+                  FROM teachers 
+                  LEFT JOIN stud_teach ON teachers.id = stud_teach.teachers
+                  LEFT JOIN students ON stud_teach.student = student.s_id-1054 Unknown column 'student.s_id' in 'on clause'
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 02-05-2020 13:40:41 - Ошибка в SQL запросе: SELECT teachers.id, teachers.name, students.id as s_id, students.name as s_name
+                  FROM teachers 
+                  LEFT JOIN stud_teach ON teachers.id = stud_teach.teachers
+                  LEFT JOIN students ON stud_teach.student = students.s_id-1054 Unknown column 'students.s_id' in 'on clause'
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
