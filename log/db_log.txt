@@ -47,3 +47,99 @@ Fault: 02-05-2020 13:40:41 - Ошибка в SQL запросе: SELECT teachers
 fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
 In line38
 
+Fault: 04-05-2020 1:08:29 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name FROM teachers   ORDER BY teachers.fio DESC,teachers.name DESC 1-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 04-05-2020 1:19:09 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name FROM teachers   ORDER BY teachers.fio DESC,teachers.name DESC 1-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 04-05-2020 1:20:07 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name FROM teachers   ORDER BY teachers.fio DESC,teachers.name DESC 1-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 04-05-2020 1:20:22 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name FROM teachers   ORDER BY teachers.fio DESC,teachers.name DESC 1-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 04-05-2020 1:21:53 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name FROM teachers   ORDER BY teachers.fio DESC,teachers.name DESC 1-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 04-05-2020 1:23:01 - Ошибка в SQL запросе: -1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UTF8' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 04-05-2020 1:23:05 - Ошибка в SQL запросе: -1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UTF8' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 04-05-2020 1:23:06 - Ошибка в SQL запросе: -1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UTF8' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 04-05-2020 1:24:58 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name FROM teachers   ORDER BY teachers.fio DESC,teachers.name DESC 1-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 04-05-2020 1:29:21 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name FROM teachers   ORDER BY teachers.fio DESC,teachers.name DESC 1-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 04-05-2020 1:31:13 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name FROM teachers   ORDER BY teachers.fio DESC,teachers.name DESC 1-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 04-05-2020 1:31:34 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name FROM teachers   ORDER BY teachers.fio DESC,teachers.name DESC 1-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 04-05-2020 1:32:53 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name FROM teachers   ORDER BY teachers.fio DESC,teachers.name DESC 1-0 
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 04-05-2020 1:38:21 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name FROM teachers   ORDER BY teachers.fio DESC,teachers.name DESC 1-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 04-05-2020 1:38:32 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name FROM teachers   ORDER BY teachers.fio DESC,teachers.name DESC 1-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 04-05-2020 1:38:50 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name FROM teachers   ORDER BY teachers.fio DESC,teachers.name DESC 1-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 04-05-2020 1:40:48 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name FROM teachers   ORDER BY teachers.fio DESC,teachers.name DESC 1-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 04-05-2020 1:49:56 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name FROM teachers   ORDER BY teachers.fio DESC,teachers.name DESC 1-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 04-05-2020 1:50:10 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name FROM teachers   ORDER BY teachers.fio DESC,teachers.name DESC 1-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 04-05-2020 1:50:13 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name FROM teachers   ORDER BY teachers.fio DESC,teachers.name DESC 1-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 04-05-2020 1:50:24 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name FROM teachers   ORDER BY teachers.fio DESC,teachers.name DESC 1-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 04-05-2020 1:50:26 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name FROM teachers   ORDER BY teachers.fio DESC,teachers.name DESC 1-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 04-05-2020 1:52:19 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name FROM teachers   ORDER BY teachers.fio DESC,teachers.name DESC 1-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
+Fault: 04-05-2020 2:01:59 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name FROM teachers   ORDER BY teachers.fio DESC,teachers.name DESC 1-2006 MySQL server has gone away
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
