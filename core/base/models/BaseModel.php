@@ -91,7 +91,7 @@ class BaseModel
 
         $were = $this->createWere($table, $set);
 
-        //$join_arr = $this->createJoin($table, $set);
+        $join_arr = $this->createJoin($table, $set);
 
         $fields .= $join_arr['fields'];
         $join = $join_arr['join'];
@@ -203,15 +203,41 @@ class BaseModel
                         foreach ($temp_item as $v){
                             $in_str .= "'" . trim($v) . "',";
                         }
-                    }
+                    }                                           /** trim обрезает символы в строке */
                     $where .= $table . $key .' '. $operand . ' (' . trim($in_str, ',') . ') ' . $condition;
 
-                    exit();
+                }elseif (strpos($operand, 'LIKE') !== false){
+
+                    $like_template = explode('%', $operand);
+
+                    foreach ($like_template as $lt_key => $lt){
+                        if (!$lt){
+                            if (!$lt_key){
+                                $item = '%'. $item;
+                            }else{
+                                $item .= '%';
+                            }
+                        }
+                    }
+
+                    $where .= $table . $key . ' LIKE ' . "'" . $item . "' $condition";
+
+                }else{
+
+                    if (strpos($item, 'SELECT') === 0){
+                        $where .= $table . $key . $operand . '(' . $item . ") $condition";
+                    }else{
+                        $where .= $table . $key . $operand . "'" . $item . "' $condition";
+                    }
+
                 }
             }
+                   /** substr  отрезает подстроку из строку и возврощяет с 0 и до strrpos($where, $condition)-последнего вхождения  */
+            $where = substr($where, 0, strrpos($where, $condition));
 
         }
 
+        return $where;
 
 
     }
