@@ -143,3 +143,7 @@ Fault: 04-05-2020 2:01:59 - Ошибка в SQL запросе: SELECT teachers.
 fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
 In line38
 
+Fault: 06-05-2020 0:34:31 - Ошибка в SQL запросе: SELECT teachers.id,teachers.name FROM teachers  WHERE  teachers.name='O'Raily'  ORDER BY teachers.name DESC LIMIT 1-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Raily'  ORDER BY teachers.name DESC LIMIT 1' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line38
+
