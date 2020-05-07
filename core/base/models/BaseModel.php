@@ -159,7 +159,7 @@ class BaseModel extends BaseModelMethods
         $insert_arr = $this->createInsert($set['fields'], $set['files'], $set['except']);
 
         if ($insert_arr){
-            $query = "INSERT INTO $table ({$insert_arr['fields']}) VALUES ({$})";
+            $query = "INSERT INTO $table ({$insert_arr['fields']}) VALUES ({$insert_arr['values']})";
 
             return $this->query($query, 'c', $set['return_id']);
         }
