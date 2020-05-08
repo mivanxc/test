@@ -231,24 +231,34 @@ abstract class BaseModelMethods
 
                 if ($except && in_array($row, $except)) continue;     /** continue - переход на новую итерацию */
 
-                $insert_arr['fields'] .= $row . '.';
+                $insert_arr['fields'] .= $row . ',';
 
                 if (in_array($value, $sql_func)){
-                    $insert_arr['values'] .= $value . '.';
+                    $insert_arr['values'] .= $value . ',';
                 }else{
                     $insert_arr['values'] .= "'" . addslashes($value) . "',";
                 }
             }
 
         }
-        if ($fields){
+        if ($files){
 
             foreach ($files as $row => $file){
 
+                $insert_arr['fields'] .= $row . ',';
+                                                                     /** json_encode, json_decode() - перевод массива в строку и обратно  */
+                if (is_array($file)) $insert_arr['values'] .= "'" . addslashes(json_encode($file)) . "',";
+
+                else $insert_arr['values'] .= "'" . addslashes($file) . "',";
 
 
             }
         }
+        if ($insert_arr){
+            foreach ($insert_arr as $key => $arr) $insert_arr[$key] = rtrim($arr, ',');
+        }
+
+        return $insert_arr;
 
     }
 }

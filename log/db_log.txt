@@ -147,3 +147,55 @@ Fault: 06-05-2020 0:34:31 - Ошибка в SQL запросе: SELECT teachers.
 fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
 In line38
 
+Fault: 08-05-2020 23:54:46 - Ошибка в SQL запросе: INSERT INTO teachers (name.content.) VALUES ('Olga','Hello',gallerry_img,'[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg\"]'img,'main_img.jpg',)-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Hello',gallerry_img,'[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line45
+
+Fault: 09-05-2020 0:04:44 - Ошибка в SQL запросе: INSERT INTO teachers (name.content.) VALUES ('Olga','Hello',gallerry_img,'[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg\"]'img,'main_img.jpg')-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Hello',gallerry_img,'[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line45
+
+Fault: 09-05-2020 0:05:16 - Ошибка в SQL запросе: INSERT INTO teachers (name.content.) VALUES ('Olga','Hello',gallerry_img,'[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg\"]'img,'main_img.jpg')-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Hello',gallerry_img,'[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line45
+
+Fault: 09-05-2020 0:08:02 - Ошибка в SQL запросе: INSERT INTO teachers (name.content.) VALUES ('Olga','Hello',gallerry_img,'[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg\"]'img,'main_img.jpg')-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Hello',gallerry_img,'[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line45
+
+Fault: 09-05-2020 0:10:55 - Ошибка в SQL запросе: INSERT INTO teachers (name.content.) VALUES ('Olga','Hello',gallerry_img,'[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg\"]'img,'[\"main_img.jpg\"]')-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Hello',gallerry_img,'[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line45
+
+Fault: 09-05-2020 0:15:00 - Ошибка в SQL запросе: INSERT INTO teachers (name.content.) VALUES ('Olga','Hello',gallerry_img,'[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg\"]'img,'[\"main_img.jpg\"]')-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Hello',gallerry_img,'[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line45
+
+Fault: 09-05-2020 0:15:02 - Ошибка в SQL запросе: INSERT INTO teachers (name.content.) VALUES ('Olga','Hello',gallerry_img,'[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg\"]'img,'[\"main_img.jpg\"]')-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Hello',gallerry_img,'[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line45
+
+Fault: 09-05-2020 0:15:03 - Ошибка в SQL запросе: INSERT INTO teachers (name.content.) VALUES ('Olga','Hello',gallerry_img,'[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg\"]'img,'[\"main_img.jpg\"]')-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Hello',gallerry_img,'[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line45
+
+Fault: 09-05-2020 0:15:47 - Ошибка в SQL запросе: INSERT INTO teachers (name.content.) VALUES ('Olga','Hello','[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg\"]''[\"main_img.jpg\"]')-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Hello','[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg\"]''[\"main_' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line45
+
+Fault: 09-05-2020 0:20:52 - Ошибка в SQL запросе: INSERT INTO teachers (name.content.) VALUES ('Olga','Hello','[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg\"]''main_img.jpg')-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Hello','[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg\"]''main_img' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line45
+
+Fault: 09-05-2020 0:20:56 - Ошибка в SQL запросе: INSERT INTO teachers (name.content.) VALUES ('Olga','Hello','[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg\"]''main_img.jpg')-1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') VALUES ('Olga','Hello','[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg\"]''main_img' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line45
+
+Fault: 09-05-2020 0:24:51 - Ошибка в SQL запросе: INSERT INTO teachers (name,content,gallerry_img,img) VALUES ('Olga','Hello','[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg\"]''main_img.jpg')-1136 Column count doesn't match value count at row 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line45
+
+Fault: 09-05-2020 0:31:16 - Ошибка в SQL запросе: INSERT INTO teachers (name,content,gallerry_img,img) VALUES ('Olga','Hello','[\"red\'\'.jpg\",\"blue.jpg\",\"black.jpg\"]''main_img.jpg')-1136 Column count doesn't match value count at row 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line45
+
