@@ -17,13 +17,13 @@ class IndexController extends BaseController
         
         $table = 'teachers';
 
-        $files['gallerry_img'] = ["red''.jpg", 'blue.jpg', 'black.jpg'];
+        $files['gallerry_img'] = ["new_red.jpg"];
         $files['img'] = 'main_img.jpg';
 
-        $res = $db->add($table, [
-            'fields' => ['name' => 'Katea', 'content' => 'Hello'],
-            'except' => ['name'],
-            'files' => $files]);
+        $res = $db->edit($table, [
+           'fields' => ['name' => 'ossfsdia'],
+            'where' => ['id' => 2]
+        ]);
 
         exit('id=' . $res['id'] . ' Name = ' . $res['name']);
     }

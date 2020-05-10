@@ -199,3 +199,27 @@ Fault: 09-05-2020 0:31:16 - Ошибка в SQL запросе: INSERT INTO teac
 fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
 In line45
 
+Fault: 10-05-2020 23:39:55 - Ошибка в SQL запросе: UPDATE teachers SET name='Masha',fields='{\"name\":\"Masha\"}',files='',except='' -1054 Unknown column 'fields' in 'field list'
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line46
+
+Fault: 10-05-2020 23:39:55 - Ошибка в SQL запросе: UPDATE teachers SET name='Masha',fields='{\"name\":\"Masha\"}',files='',except='' -1054 Unknown column 'fields' in 'field list'
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line46
+
+Fault: 10-05-2020 23:39:55 - Ошибка в SQL запросе: UPDATE teachers SET name='Masha',fields='{\"name\":\"Masha\"}',files='',except='' -1054 Unknown column 'fields' in 'field list'
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line46
+
+Fault: 10-05-2020 23:39:56 - Ошибка в SQL запросе: UPDATE teachers SET name='Masha',fields='{\"name\":\"Masha\"}',files='',except='' -1054 Unknown column 'fields' in 'field list'
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line46
+
+Fault: 10-05-2020 23:43:16 - Ошибка в SQL запросе: UPDATE teachers SET name='Masha',fields='{\"name\":\"Masha\"}',files='',except='' -1054 Unknown column 'fields' in 'field list'
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line46
+
+Fault: 10-05-2020 23:43:58 - Ошибка в SQL запросе: UPDATE teachers SET name='Masha',fields='{\"name\":\"Masha\"}',files='',except='' -1054 Unknown column 'fields' in 'field list'
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line46
+

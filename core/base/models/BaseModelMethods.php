@@ -6,6 +6,7 @@ namespace core\base\models;
 
 abstract class BaseModelMethods
 {
+    protected $sqlFunc = ['NOW()']; /** NOW()-ставит текушеевремя */
 
     protected function createFields($set, $table = false){
 
@@ -141,7 +142,6 @@ abstract class BaseModelMethods
 
         return $where;
 
-
     }
 
     protected function createJoin($set, $table, $new_where = false){
@@ -218,14 +218,9 @@ abstract class BaseModelMethods
 
     protected function createInsert($fields, $files, $except){
 
-        if (!$fields){
-            $fields = $_POST;
-        }
         $insert_arr = [];
 
         if ($fields){
-                                          /** NOW()-ставит текушеевремя */
-            $sql_func = ['NOW()'];
 
             foreach ($fields as $row => $value){
 
@@ -233,7 +228,7 @@ abstract class BaseModelMethods
 
                 $insert_arr['fields'] .= $row . ',';
 
-                if (in_array($value, $sql_func)){
+                if (in_array($value, $this->sqlFunc)){
                     $insert_arr['values'] .= $value . ',';
                 }else{
                     $insert_arr['values'] .= "'" . addslashes($value) . "',";
@@ -254,11 +249,43 @@ abstract class BaseModelMethods
 
             }
         }
-        if ($insert_arr){
-            foreach ($insert_arr as $key => $arr) $insert_arr[$key] = rtrim($arr, ',');
-        }
+        foreach ($insert_arr as $key => $arr) $insert_arr[$key] = rtrim($arr, ',');
 
         return $insert_arr;
+    }
 
+    protected function createUpdate($fields, $files, $except){
+
+        $update = '';
+
+        if ($fields){
+            foreach ($fields as $row => $value){
+                if ($except && is_array($row, $except)) continue;
+
+                $update .= $row . '=';
+
+                if (in_array($value, $this->sqlFunc)){  /** если в масиве $value есть  $this->sqlFunc */
+
+                    $update .= $value . ',';
+                }else{
+                    $update .= "'" . addslashes($value) . "',";
+                }
+            }
+        }
+
+        if ($files){
+
+            foreach ($files as $row => $file){
+
+                $update .= $row . '=';
+                /** json_encode, json_decode() - перевод массива в строку и обратно  */
+                if (is_array($file)) $update .= "'" . addslashes(json_encode($file)) . "',";
+
+                else $update .= "'" . addslashes($file) . "',";
+
+            }
+        }
+
+        return rtrim($update, ',');
     }
 }
