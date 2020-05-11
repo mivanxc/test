@@ -182,7 +182,7 @@ class BaseModel extends BaseModelMethods
 
         $set['except'] = (is_array($set['except']) && !empty($set['except'])) ? $set['except'] : false;
 
-        if ($set['all_rows']){
+        if (!$set['all_rows']){
 
             if ($set['where']){
                 $where = $this->createWhere($set);
@@ -219,8 +219,9 @@ class BaseModel extends BaseModelMethods
         if ($res){
 
             foreach ($res as $row){
-                $columns[$row['Fields']] = $row;
-                if ($row['Key'] === 'PRI')  $columns['id_row'] = $row['Fields'];             /** PRI- индентификатор первичного ключа из DB */
+                $columns[$row['Field']] = $row;
+                if ($row['Key'] === 'PRI')
+                    $columns['id_row'] = $row['Field'];             /** PRI- индентификатор первичного ключа из DB */
             }
         }
         return $columns;
