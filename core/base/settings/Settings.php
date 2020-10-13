@@ -41,10 +41,14 @@ class Settings
         ]
     ];
 
+    private $defaultTable = 'teachers';
+
     private $templateArr = [
         'text' => ['name', 'phone', 'address'],
         'textarea' => ['content', 'keywords']
     ];
+
+    private $expansion = 'core/admin/expansion/';
 
     static public function get($property){
         return self::instance()->$property;

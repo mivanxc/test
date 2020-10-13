@@ -7,21 +7,14 @@ namespace core\admin\controller;
 use core\base\controller\BaseController;
 
 use core\admin\model\Model;
+use core\base\settings\Settings;
 
 class IndexController extends BaseController
 {
 
     protected function inputData(){
 
-        $db = Model::instance();
-        
-        $table = 'teachers';
-
-        $files = [];
-
-
-        $res = $db->edit($table);
-
-        exit('id=' . $res['id'] . ' Name = ' . $res['name']);
+       $redirect = PATH. Settings::get('routes')['admin']['alias'] . '/show';
+       $this->redirect($redirect);
     }
 }

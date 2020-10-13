@@ -1,7 +1,7 @@
 <?php
 
 define('VG_ACCESS', true);
-
+//SET GLOBAL time_zone = '+1:00';
 //header('Content-Type:text/html:charset-utf-8');
 session_start();
 

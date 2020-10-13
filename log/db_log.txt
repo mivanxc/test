@@ -247,3 +247,23 @@ Fault: 11-05-2020 22:26:00 - Ошибка в SQL запросе: UPDATE teachers
 fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
 In line46
 
+Fault: 17-05-2020 15:08:23 - Ошибка в SQL запросе: UPDATE teachers SET name=,img= WHERE  teachers.id='1' -1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'img= WHERE  teachers.id='1'' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line46
+
+Fault: 24-05-2020 11:26:15 - Ошибка в SQL запросе: SHOW COLUMNS FROM -1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line46
+
+Fault: 25-05-2020 21:49:11 - Ошибка в SQL запросе: SHOW COLUMNS FROM -1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line46
+
+Fault: 25-05-2020 21:49:11 - Ошибка в SQL запросе: SHOW COLUMNS FROM -1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line46
+
+Fault: 26-07-2020 11:50:50 - Ошибка в SQL запросе: SHOW COLUMNS FROM -1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+fileC:\open_server\OSPanel\domains\test\core\base\models\BaseModel.php
+In line46
+

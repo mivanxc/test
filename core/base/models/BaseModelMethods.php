@@ -149,6 +149,7 @@ abstract class BaseModelMethods
         $fields = '';
         $join = '';
         $where = '';
+        $tables = '';
 
         if ($set['join']){
 
@@ -193,6 +194,7 @@ abstract class BaseModelMethods
                     $join .= '.' . $join_fields[0] . '=' . $key . '.' . $join_fields[1];
 
                     $join_table = $key;
+                    $tables .= ', ' . trim($join_table);
 
                     if ($new_where){
                         if ($item['where']){
@@ -212,7 +214,7 @@ abstract class BaseModelMethods
 
         }
 
-        return compact('fields', 'join', 'where');
+        return compact('fields', 'join', 'where', 'tables');
 
     }
 
@@ -267,6 +269,9 @@ abstract class BaseModelMethods
                 if (in_array($value, $this->sqlFunc)){  /** если в масиве $value есть  $this->sqlFunc */
 
                     $update .= $value . ',';
+                }elseif ($value === NULL){
+                    $update .= "NULL" . ',';
+
                 }else{
                     $update .= "'" . addslashes($value) . "',";
                 }
