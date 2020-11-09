@@ -21,13 +21,15 @@ class RouteController extends BaseController
        поиск последнего вхождения подстроки в строку
        если стоит в конце и это не корневой фаил то отпровляем на адрес без  */
 
-     if(strrpos($adress_atr, '/') === strlen($adress_atr) -1 && strrpos($adress_atr, '/') !== 0){
-         $this->redirect(rtrim($adress_atr, '/'), 301);
-     }
 
      $path = substr($_SERVER['PHP_SELF'], 0, strpos($_SERVER['PHP_SELF'], 'index.php'));
 
      if($path === PATH){
+
+         if(strrpos($adress_atr, '/') === strlen($adress_atr) -1 &&
+             strrpos($adress_atr, '/') !== strlen(PATH) - 1){
+             $this->redirect(rtrim($adress_atr, '/'), 301);
+         }
 
          $this->routes = Settings::get('routes');
 

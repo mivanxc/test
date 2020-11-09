@@ -3,8 +3,6 @@
 
 namespace core\admin\expansion;
 
-
-use core\admin\controller\BaseAdmin;
 use core\base\controller\Singleton;
 
 class TeachersExpansion
@@ -13,7 +11,8 @@ class TeachersExpansion
 
     public function expansion($args = []){
 
-        exit();
+       // $this->title = 'lala lala';
+
     }
 
 }

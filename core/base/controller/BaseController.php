@@ -10,7 +10,11 @@ abstract class BaseController
 {
     use \core\base\controller\BaseMethods;
 
+    protected $header;
+    protected $content;
+    protected $footer;
     protected $page;
+
     protected $errors;
 
     protected $controller;
@@ -18,6 +22,7 @@ abstract class BaseController
     protected $outputMethod;
     protected $parameters;
 
+    protected $template;
     protected  $styles;
     protected $scripts;
 
